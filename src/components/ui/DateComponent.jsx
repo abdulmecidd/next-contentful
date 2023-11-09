@@ -1,11 +1,7 @@
 import { formatDate } from '@/lib/utils'
 
 const DateComponent = ({ dateString, options, ...rest }) => {
-  return (
-    <time dateTime={dateString} {...rest}>
-      {formatDate(dateString, options)}
-    </time>
-  )
+  return <time dateTime={dateString} {...rest}></time>
 }
 
 export default DateComponent

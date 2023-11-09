@@ -7,7 +7,7 @@ const Posts = ({ posts }) => {
       <div className='container'>
         <ul className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 sm:gap-10'>
           {posts.map((post, i) => (
-            <PostCard key={post.fields.slug} post={post} />
+            <PostCard key={post.url} post={post} />
           ))}
         </ul>
       </div>
@@ -16,8 +16,7 @@ const Posts = ({ posts }) => {
 }
 
 export const getStaticProps = async () => {
-  const response = await client.getEntries({ content_type: 'post' })
-
+  const response = await client.getEntries({ content_type: 'blogPost' })
   return {
     props: {
       posts: response.items,

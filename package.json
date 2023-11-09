@@ -13,14 +13,16 @@
     "@contentful/rich-text-types": "^16.0.2",
     "@headlessui/react": "^1.7.7",
     "@heroicons/react": "^2.0.13",
+    "@metamanager/react-seo": "^0.7.0",
     "@next/font": "13.1.2",
     "clsx": "^1.2.1",
-    "contentful": "^9.2.15",
+    "contentful": "^9.3.5",
     "eslint": "8.31.0",
     "eslint-config-next": "13.1.2",
     "next": "13.1.2",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-helmet": "^6.1.0"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.9",

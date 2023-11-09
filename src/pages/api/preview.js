@@ -8,8 +8,8 @@ const handler = async (req, res) => {
   }
 
   const response = await previewClient.getEntries({
-    content_type: 'post',
-    'fields.slug': slug
+    content_type: 'blogPost',
+    'fields.url': slug
   })
 
   const post = response?.items?.[0]
@@ -19,7 +19,7 @@ const handler = async (req, res) => {
   }
 
   res.setPreviewData({})
-  const url = `/posts/${post.fields.slug}`
+  const url = `/posts/${post.fields.url}`
   res.writeHead(307, { Location: url })
   res.end()
 }

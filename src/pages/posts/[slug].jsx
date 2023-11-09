@@ -32,8 +32,8 @@ export const getStaticProps = async ({ params, preview = false }) => {
 
   const { slug } = params
   const response = await cfClient.getEntries({
-    content_type: 'post',
-    'fields.slug': slug
+    content_type: 'blogPost',
+    'fields.url': slug
   })
 
   if (!response?.items?.length) {
@@ -55,9 +55,9 @@ export const getStaticProps = async ({ params, preview = false }) => {
 }
 
 export const getStaticPaths = async () => {
-  const response = await client.getEntries({ content_type: 'post' })
+  const response = await client.getEntries({ content_type: 'blogPost' })
   const paths = response.items.map(item => ({
-    params: { slug: item.fields.slug }
+    params: { slug: item.fields.url }
   }))
 
   return {
